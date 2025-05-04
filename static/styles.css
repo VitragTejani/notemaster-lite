@@ -7,6 +7,11 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: 0.2px;  /* subtle for premium look */
+    -webkit-font-smoothing: antialiased;  /* NEW: smooth font rendering */
+    -moz-osx-font-smoothing: grayscale;   /* NEW: smooth font rendering */
 }
 
 /* Center container */
@@ -25,6 +30,14 @@ h1, h2 {
     margin-top: 0;
     padding-top: 20px;
     color: #007bff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+h3 {
+    font-weight: 500;
+    color: #444;
+    margin-top: 20px;  /* NEW: better spacing above */
 }
 
 /* Form and textarea */
@@ -39,10 +52,16 @@ textarea {
     width: 100%;
     padding: 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;  /* synced with all boxes */
     resize: vertical;
     min-height: 150px;
     font-size: 1rem;
+    transition: border 0.2s ease;
+}
+
+textarea:focus {
+    border: 1px solid #007bff;  /* NEW: clean focus effect */
+    outline: none;
 }
 
 /* Buttons */
@@ -51,20 +70,28 @@ button {
     color: white;
     padding: 12px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;  /* synced */
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-top: 10px;
 }
 
 button:hover {
     background-color: #0056b3;
+    transform: translateY(-1px);
 }
 
 /* Section spacing */
-.section {
+.section,
+.practice-box,
+.intro-box,
+.case-box,
+.result-box,
+.user-answer-box {
     padding: 20px;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 /* List improvements */
@@ -89,7 +116,41 @@ a:hover {
     padding: 15px;
     border-left: 4px solid #007bff;
     margin-top: 20px;
-    border-radius: 5px;
+    border-radius: 8px;  /* synced */
+}
+
+/* User answer box */
+.user-answer-box {
+    background-color: #fdfdfd;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;  /* slightly more padding */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    margin-top: 20px;
+}
+
+.user-answer-box p {
+    margin: 10px 0;
+    word-break: break-word;
+}
+
+/* Soft panel backgrounds for main boxes */
+.practice-box,
+.intro-box,
+.case-box,
+.result-box {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Practice box and Intro box styling */
+.practice-box {
+    background-color: #f0f8ff;
+}
+
+.intro-box {
+    background-color: #f9f9f9;
 }
 
 /* Responsive tweaks */
@@ -98,34 +159,15 @@ a:hover {
         font-size: 1.5rem;
     }
 
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    textarea {
+        font-size: 0.95rem;  /* NEW: smooth on mobile */
+    }
+
     button {
         width: 100%;
     }
-}
-/* Soft panel backgrounds for main boxes */
-.practice-box,
-.intro-box,
-.case-box,
-.result-box {
-    background-color: #f8f9fa;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
-}
-/* Practice box and Intro box styling */
-.practice-box {
-    background-color: #f0f8ff;  /* light premium blue */
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
-}
-
-.intro-box {
-    background-color: #f9f9f9;  /* soft neutral */
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
 }

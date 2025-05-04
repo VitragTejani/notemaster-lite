@@ -69,6 +69,29 @@
                 💡 <strong>How to present when asked for a quick summary:</strong> {{ case.model_answer.pro_tip }}
             </div>
 
+            <!-- 👤 User's Submitted Note Section -->
+            {% if user_answer %}
+            <div class="tip-box" style="margin-top: 30px;">
+                📝 <strong>Your Submitted SOAP Note:</strong><br><br>
+
+                <p><strong>Subjective (S):</strong><br>
+                    {{ user_answer.subjective }}
+                </p>
+
+                <p><strong>Objective (O):</strong><br>
+                    {{ user_answer.objective }}
+                </p>
+
+                <p><strong>Assessment (A):</strong><br>
+                    {{ user_answer.assessment }}
+                </p>
+
+                <p><strong>Plan (P):</strong><br>
+                    {{ user_answer.plan }}
+                </p>
+            </div>
+            {% endif %}
+
             <br><br>
             <a href="{{ url_for('home') }}">⬅️ Back to Home</a>
         </div>
