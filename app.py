@@ -72,7 +72,7 @@ def simulate():
                 "objective": "Temp 37°C, mild suprapubic tenderness. UA: +LE, +nitrites. (Key exam + labs.)",
                 "assessment": "Uncomplicated lower UTI. (Specific diagnosis.)",
                 "plan": "Nitrofurantoin 100 mg BID x5 days. Increase fluids. (Simple treatment plan.)",
-                "pro_tip": "Example: \"25F with dysuria, UA positive—UTI confirmed. Starting nitrofurantoin.\""
+                "pro_tip": "Example: \"25F with dysuria, UA positive - UTI confirmed. Starting nitrofurantoin.\""
             }
         },
         "appendicitis": {
@@ -90,7 +90,7 @@ def simulate():
                 "objective": "Temp 38°C, RLQ tenderness + guarding. WBC 13.5k. (Key findings.)",
                 "assessment": "Suspected acute appendicitis. (Direct diagnosis.)",
                 "plan": "NPO, IV fluids, analgesia, surgical consult, CT abdomen. (Management steps.)",
-                "pro_tip": "Example: \"20M with RLQ pain, guarding, WBC high—likely appendicitis. Consult surgery, prepping CT.\""
+                "pro_tip": "Example: \"20M with RLQ pain, guarding, WBC high likely appendicitis. Consult surgery, prepping CT.\""
             }
         },
         "peds_rash": {
@@ -146,3 +146,10 @@ def simulate():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+@app.template_filter('remove_dashes')
+def remove_dashes(s):
+    if not isinstance(s, str):
+        return s
+    return s.replace('-', '').replace('–', '').replace('—', '')
+

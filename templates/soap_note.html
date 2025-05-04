@@ -7,70 +7,74 @@
 </head>
 <body>
 
-    <h1>📝 SOAP Note Simulation: {{ case.title }}</h1>
+    <div class="container">
 
-    <!-- 🩺 Clinical Case -->
-    <div class="case-box">
-        <h2>🩺 Clinical Case</h2>
-        {% for label, detail in case.case_details %}
-            <p><strong>{{ label }}:</strong> {{ detail }}</p>
-        {% endfor %}
-    </div>
+        <h1>📝 SOAP Note Simulation: {{ case.title }}</h1>
 
-    <!-- ✍️ SOAP Note Form -->
-    {% if not show_answer %}
-    <form method="POST" class="soap-form">
-        <label for="subjective"><strong>Subjective (S):</strong></label>
-        <p class="hint">Hint: Summarize symptoms + history in 1–2 sentences.</p>
-        <textarea id="subjective" name="subjective" rows="3" required></textarea>
-
-        <label for="objective"><strong>Objective (O):</strong></label>
-        <p class="hint">Hint: Include vitals, key exam findings, and important labs/imaging.</p>
-        <textarea id="objective" name="objective" rows="3" required></textarea>
-
-        <label for="assessment"><strong>Assessment (A):</strong></label>
-        <p class="hint">Hint: Your diagnosis + brief reasoning.</p>
-        <textarea id="assessment" name="assessment" rows="3" required></textarea>
-
-        <label for="plan"><strong>Plan (P):</strong></label>
-        <p class="hint">Hint: Treatment + monitoring steps (meds, tests, follow-up).</p>
-        <textarea id="plan" name="plan" rows="3" required></textarea>
-
-        <button type="submit">✅ Submit SOAP Note and get ideal answer with attending tip</button>
-    </form>
-    {% endif %}
-
-    <!-- ✅ Model Answer Section -->
-    {% if show_answer %}
-    <div class="result-box">
-        <h2>✅ Thank you! Your note was submitted.</h2>
-        <h3>📋 Model Answer (with Teaching Tips):</h3>
-
-        <p><strong>Subjective (S):</strong><br>
-            {{ case.model_answer.subjective }}
-        </p>
-
-        <p><strong>Objective (O):</strong><br>
-            {{ case.model_answer.objective }}
-        </p>
-
-        <p><strong>Assessment (A):</strong><br>
-            {{ case.model_answer.assessment }}
-        </p>
-
-        <p><strong>Plan (P):</strong><br>
-            {{ case.model_answer.plan }}
-        </p>
-
-        <!-- 💡 Pro Tip -->
-        <div class="tip-box">
-            💡 <strong>Pro Tip:</strong> {{ case.model_answer.pro_tip }}
+        <!-- 🩺 Clinical Case -->
+        <div class="case-box">
+            <h2>🩺 Clinical Case</h2>
+            {% for label, detail in case.case_details %}
+                <p><strong>{{ label }}:</strong> {{ detail }}</p>
+            {% endfor %}
         </div>
 
-        <br><br>
-        <a href="{{ url_for('home') }}">⬅️ Back to Home</a>
-    </div>
-    {% endif %}
+        <!-- ✍️ SOAP Note Form -->
+        {% if not show_answer %}
+        <form method="POST" class="soap-form">
+            <label for="subjective"><strong>Subjective (S):</strong></label>
+            <p class="hint">Hint: Summarize symptoms + history in 1–2 sentences.</p>
+            <textarea id="subjective" name="subjective" rows="3" required></textarea>
+
+            <label for="objective"><strong>Objective (O):</strong></label>
+            <p class="hint">Hint: Include vitals, key exam findings, and important labs/imaging.</p>
+            <textarea id="objective" name="objective" rows="3" required></textarea>
+
+            <label for="assessment"><strong>Assessment (A):</strong></label>
+            <p class="hint">Hint: Your diagnosis + brief reasoning.</p>
+            <textarea id="assessment" name="assessment" rows="3" required></textarea>
+
+            <label for="plan"><strong>Plan (P):</strong></label>
+            <p class="hint">Hint: Treatment + monitoring steps (meds, tests, follow-up).</p>
+            <textarea id="plan" name="plan" rows="3" required></textarea>
+
+            <button type="submit">✅ Submit SOAP Note and get ideal answer with attending tip</button>
+        </form>
+        {% endif %}
+
+        <!-- ✅ Model Answer Section -->
+        {% if show_answer %}
+        <div class="result-box">
+            <h2>✅ Thank you! Your note was submitted.</h2>
+            <h3>📋 Model Answer (with Teaching Tips):</h3>
+
+            <p><strong>Subjective (S):</strong><br>
+                {{ case.model_answer.subjective }}
+            </p>
+
+            <p><strong>Objective (O):</strong><br>
+                {{ case.model_answer.objective }}
+            </p>
+
+            <p><strong>Assessment (A):</strong><br>
+                {{ case.model_answer.assessment }}
+            </p>
+
+            <p><strong>Plan (P):</strong><br>
+                {{ case.model_answer.plan }}
+            </p>
+
+            <!-- 💡 Pro Tip -->
+            <div class="tip-box">
+                💡 <strong>Pro Tip:</strong> {{ case.model_answer.pro_tip }}
+            </div>
+
+            <br><br>
+            <a href="{{ url_for('home') }}">⬅️ Back to Home</a>
+        </div>
+        {% endif %}
+
+    </div> <!-- ✅ End of container -->
 
 </body>
 </html>
