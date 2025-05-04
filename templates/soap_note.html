@@ -23,19 +23,19 @@
         {% if not show_answer %}
         <form method="POST" class="soap-form">
             <label for="subjective"><strong>Subjective (S):</strong></label>
-            <p class="hint">Hint: Summarize symptoms + history in 1–2 sentences.</p>
+            <p class="hint">Hint: Summarize symptoms and history in 1 to 2 sentences.</p>
             <textarea id="subjective" name="subjective" rows="3" required></textarea>
 
             <label for="objective"><strong>Objective (O):</strong></label>
-            <p class="hint">Hint: Include vitals, key exam findings, and important labs/imaging.</p>
+            <p class="hint">Hint: Include vitals, key exam findings, and important labs or imaging.</p>
             <textarea id="objective" name="objective" rows="3" required></textarea>
 
             <label for="assessment"><strong>Assessment (A):</strong></label>
-            <p class="hint">Hint: Your diagnosis + brief reasoning.</p>
+            <p class="hint">Hint: Your diagnosis and brief reasoning.</p>
             <textarea id="assessment" name="assessment" rows="3" required></textarea>
 
             <label for="plan"><strong>Plan (P):</strong></label>
-            <p class="hint">Hint: Treatment + monitoring steps (meds, tests, follow-up).</p>
+            <p class="hint">Hint: Treatment and monitoring steps (meds, tests, follow up).</p>
             <textarea id="plan" name="plan" rows="3" required></textarea>
 
             <button type="submit">✅ Submit SOAP Note and get ideal answer with attending tip</button>
@@ -64,9 +64,9 @@
                 {{ case.model_answer.plan }}
             </p>
 
-            <!-- 💡 Pro Tip -->
+            <!-- 💡 Quick Summary Tip -->
             <div class="tip-box">
-                💡 <strong>Pro Tip:</strong> {{ case.model_answer.pro_tip }}
+                💡 <strong>How to present when asked for a quick summary:</strong> {{ case.model_answer.pro_tip }}
             </div>
 
             <br><br>

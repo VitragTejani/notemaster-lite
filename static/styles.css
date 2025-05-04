@@ -67,6 +67,31 @@ button:hover {
     margin: 20px 0;
 }
 
+/* List improvements */
+ul {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+/* Link styling */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Tip box styling */
+.tip-box {
+    background-color: #e9f5ff;
+    padding: 15px;
+    border-left: 4px solid #007bff;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
 /* Responsive tweaks */
 @media (max-width: 600px) {
     h1 {
