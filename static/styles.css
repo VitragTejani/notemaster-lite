@@ -171,3 +171,60 @@ a:hover {
         width: 100%;
     }
 }
+
+/* 🔵 Contact Box Styling */
+.contact-box {
+    padding: 20px;
+    margin: 40px 0;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.contact-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.contact-box input[type="text"],
+.contact-box input[type="email"],
+.contact-box textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    resize: vertical;
+    transition: border 0.2s ease;
+}
+
+.contact-box input[type="text"]:focus,
+.contact-box input[type="email"]:focus,
+.contact-box textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.contact-box button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-box button:hover {
+    background-color: #0056b3;
+}
+
+.creator-credit {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    text-align: center;
+    color: #666;
+}
